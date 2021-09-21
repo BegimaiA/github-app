@@ -1,5 +1,17 @@
-body{
-    background: url("tech-planet.jpg") no-repeat center;
+.main-page-wrapper{
+    background: url("tech-planet.jpg") no-repeat center/cover;
     height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
+}
+.input-wrapper{
+    background-color: #545677;
+    border-radius: 8px;
+
+}
+.logo-img{
+    margin: 0 auto;
+    display: block;
 }
