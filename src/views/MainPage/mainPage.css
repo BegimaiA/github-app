@@ -7,11 +7,16 @@
 
 }
 .input-wrapper{
-    background-color: #545677;
+    background-color: #0b4f6c;
     border-radius: 8px;
+    width: 500px;
 
 }
 .logo-img{
     margin: 0 auto;
     display: block;
+}
+.main-input{
+    border: none;
+    outline: transparent;
 }

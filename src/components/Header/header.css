@@ -1,0 +1,8 @@
+header{
+    height: 100px;
+    background-color: #0b4f6c;
+    color: #fff;
+}
+.avatar{
+    border-radius: 50%;
+}

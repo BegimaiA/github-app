@@ -22,8 +22,8 @@ const MainPage = () => {
   <div className="main-page-wrapper">
     <div className="input-wrapper p-5">
       <img src={github} width={80}className="mx-auto logo-img" alt=""/>
-      <Form>
-        <input placeholder="Search" className="me-3 form-control"  value={inputValue} onChange={handleInput}/>
+      <Form className="d-flex justify-content-center mt-5">
+        <input placeholder="Search" className="me-3 rounded-3 ps-3 input-group-sm main-input"  value={inputValue} onChange={handleInput}/>
         <button className="btn btn-primary" onClick={handleSearch}>Search user </button>
       </Form>
     </div>

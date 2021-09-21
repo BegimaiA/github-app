@@ -7,8 +7,8 @@ import UserItem from "./views/UserItem";
 function App() {
   return (
 <Router>
-  <Route exact path="/">  <MainPage/>    </Route>
-  <Route path="/:login">  <UserItem/>    </Route>
+  <Route exact path="/">  <MainPage/> </Route>
+  <Route path="/:login">  <UserItem/> </Route>
 
 </Router>
   );
