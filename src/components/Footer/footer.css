@@ -1,0 +1,11 @@
+footer{
+    background-color: #0b4f6c;
+    color: #fff;
+    padding: 15px;
+}
+li{
+    list-style: none;
+}
+ul{
+    padding: 0;
+}
