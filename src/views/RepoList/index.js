@@ -1,4 +1,4 @@
-import React, { useState} from 'react';
+import React from 'react';
 import {Link} from "react-router-dom"
 import {Container} from "react-bootstrap";
 import NotFound from "../../components/NotFound";
@@ -8,18 +8,19 @@ import SpinnerComp from "../../components/SpinnerComp";
 const RepoList = ({repos, search,login, isLoading, notFound}) => {
   const filteredRepos = repos.filter(el => el.name.toLowerCase().includes(search))
   console.log(isLoading)
+  console.log(notFound)
 
   if(isLoading) {
     return <SpinnerComp/>
   }
-  if(notFound){
-    return <NotFound/>
-  }
+  // if(notFound){
+  //   return <NotFound/>
+  // }
   return (
     <>
       <Container>
         <table border="1" className="table my-5 table-bordered table-striped my-3" cellPadding="15" width="600px"
-               height="50px" cellSpacing="0">
+               cellSpacing="0">
           <thead>
           <tr valign="center">
             <th>Name</th>

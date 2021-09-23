@@ -26,7 +26,8 @@ const Home = () => {
        {headers: { 'Accept': 'application/vnd.github.raw' }})
        .then(({data})=>setReadme(data))
    }
-  },[login, repo] )
+  },[login, repo, repos])
+
   return (
     <>
       <Header setSearch={setSearch}/>
