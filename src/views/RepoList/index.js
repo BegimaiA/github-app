@@ -2,22 +2,16 @@ import React, { useState} from 'react';
 import {Link} from "react-router-dom"
 import {Container} from "react-bootstrap";
 import NotFound from "../../components/NotFound";
-import Spinner from "../../components/Spinner";
+import SpinnerComp from "../../components/SpinnerComp";
 
 
-const RepoList = ({repos, search,login}) => {
-
-  const [notFound, setNotFound] = useState(false)
-  const [isLoading, setIsLoading] = useState(true)
+const RepoList = ({repos, search,login, isLoading, notFound}) => {
   const filteredRepos = repos.filter(el => el.name.toLowerCase().includes(search))
+  console.log(isLoading)
 
-  // if (isLoading) {
-  //   return <Spinner/>
-  // }
-  // if (notFound){
-  //   return <NotFound/>
-  // }
-
+  if(isLoading) {
+    return <SpinnerComp/>
+  }
   return (
     <>
       <Container>

@@ -2,7 +2,6 @@ import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import MainPage from "./views/MainPage";
 import Home from "./views/Home";
-
 import NotFound from "./components/NotFound";
 
 
