@@ -56,7 +56,7 @@ const RepoList = () => {
                 <td>  {item.name}</td>
                 <td> Go</td>
                 <td>   {item.updated_at}</td>
-                <td> <Link to={`/${params.login}/${item.name}`}>Readme</Link></td>
+                <td> <Link to={`/${params.login}/${item.name}`} className="text-decoration-none">Readme</Link></td>
               </tr>
             )}
           </tbody>

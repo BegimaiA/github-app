@@ -2,6 +2,9 @@ import React, {useState, useEffect} from 'react';
 import axios from "axios";
 import {useParams} from "react-router-dom";
 import Markdown from 'markdown-to-jsx';
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
+import {Container} from "react-bootstrap";
 
 
 const Readme = () => {
@@ -14,10 +17,13 @@ const Readme = () => {
   },[login, repo])
 
   return (
-readme
-    // <Markdown>readme</Markdown>
-
-
+<>
+  <Header/>
+   <Container>
+     <Markdown>{readme}</Markdown>
+   </Container>
+<Footer/>
+</>
   );
 };
 
