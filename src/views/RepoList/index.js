@@ -13,9 +13,9 @@ const RepoList = ({repos, search,login, isLoading, notFound}) => {
   if(isLoading) {
     return <SpinnerComp/>
   }
-  // if(notFound){
-  //   return <NotFound/>
-  // }
+  if(notFound){
+    return <NotFound/>
+  }
   return (
     <>
       <Container>
