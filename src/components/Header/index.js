@@ -3,6 +3,8 @@ import "./header.css"
 import axios from "axios";
 import {Link, useParams} from "react-router-dom";
 
+
+
 const Header = ({handleSearch}) => {
   const [user, setUser] = useState({})
   const params = useParams()

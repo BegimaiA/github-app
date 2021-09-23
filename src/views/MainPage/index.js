@@ -1,5 +1,4 @@
-import React, {useState, useEffect} from 'react';
-import axios from "axios";
+import React, {useState} from 'react';
 import {useHistory} from "react-router-dom"
 import { Form} from "react-bootstrap";
 import "./mainPage.css"
@@ -22,9 +21,10 @@ const MainPage = () => {
   <div className="main-page-wrapper">
     <div className="input-wrapper p-5">
       <img src={github} width={80}className="mx-auto logo-img" alt=""/>
-      <Form className="d-flex justify-content-center mt-5">
+      <h3 className="text-white text-center mt-4">Search user's repository</h3>
+      <Form className="d-flex justify-content-center mt-3">
         <input placeholder="Search" className="me-3 rounded-3 ps-3 input-group-sm main-input"  value={inputValue} onChange={handleInput}/>
-        <button className="btn btn-primary" onClick={handleSearch}>Search user </button>
+        <button className="btn btn-primary" onClick={handleSearch}>Search </button>
       </Form>
     </div>
   </div>
