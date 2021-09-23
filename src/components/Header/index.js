@@ -5,14 +5,13 @@ import {Link, useParams} from "react-router-dom";
 
 
 
-const Header = ({handleSearch}) => {
+const Header = ({setSearch}) => {
   const [user, setUser] = useState({})
   const params = useParams()
   useEffect(() => {
     axios(`https://api.github.com/users/${params.login}`)
       .then(({data}) => setUser(data))
   }, [params.login])
-
 
   return (
     <header>
@@ -21,7 +20,7 @@ const Header = ({handleSearch}) => {
           <img src={user.avatar_url} width={80} className="avatar me-3" alt=""/>
           <span className="fs-4">  {user.login}</span> </a>
         <div>
-          <input onChange={handleSearch} type="text" placeholder="Search ..."
+          <input onChange={(e)=>setSearch(e.target.value)} type="text" placeholder="Search ..."
                  className="input main-input rounded-3 input-group-sm p-1"/>
           <Link to="/" className="text-decoration-none">
             <button className="btn text-white d-block">Home</button>
