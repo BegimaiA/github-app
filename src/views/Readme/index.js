@@ -15,7 +15,7 @@ const Readme = ({login, repo, setNotFound}) => {
 
   return (
    <Container>
-     <Markdown className="readme">{readme}</Markdown>
+     <Markdown className="readme mt-3">{readme}</Markdown>
    </Container>
   );
 };

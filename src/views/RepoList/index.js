@@ -3,6 +3,7 @@ import {Link} from "react-router-dom"
 import {Container} from "react-bootstrap";
 import NotFound from "../../components/NotFound";
 import SpinnerComp from "../../components/SpinnerComp";
+import "./repoList.css"
 
 const RepoList = ({repos, search,login, isLoading, notFound}) => {
   const filteredRepos = repos.filter(el => el.name.toLowerCase().includes(search))
@@ -35,7 +36,7 @@ const RepoList = ({repos, search,login, isLoading, notFound}) => {
             filteredRepos.map(item =>
               <tr key={item.id}>
                 <td>  {item.name}</td>
-                <td><Link to={{pathname: item.homepage}} target="_blank"> Go</Link></td>
+                <td><Link to={{pathname: item.homepage}} target="_blank" className={item.homepage? "green" : "red"}> Go</Link></td>
                 <td>   {item.updated_at}</td>
                 <td> <Link to={`/${login}/${item.name}`} className="text-decoration-none">Readme</Link></td>
               </tr>

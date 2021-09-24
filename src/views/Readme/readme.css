@@ -1,3 +1,6 @@
 .readme pre{
     background-color: #f6f8fa;
 }
+.readme img{
+    max-width: 100%;
+}
