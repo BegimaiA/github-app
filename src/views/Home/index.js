@@ -9,7 +9,6 @@ import axios from "axios";
 const Home = () => {
   const [repos, setRepos] = useState([])
   const [search, setSearch] = useState("")
-  const [readme, setReadme] = useState("")
   const [notFound, setNotFound] = useState(false)
   const [isLoading, setIsLoading] = useState(true)
   const {login, repo} =useParams()
@@ -20,21 +19,14 @@ const Home = () => {
       })
     .catch(()=>setNotFound(true))
     .finally(()=>setIsLoading(false))
-
-   if(repos !==undefined) {
-     axios(`https://api.github.com/repos/${login}/${repo}/readme`,
-       {headers: { 'Accept': 'application/vnd.github.raw' }})
-       .then(({data})=>setReadme(data))
-   }
-  },[login, repo, repos])
+  },[login])
 
   return (
     <>
       <Header setSearch={setSearch}/>
       <Route exact path="/:login"> <RepoList repos={repos} search={search} login={login} notFound={notFound} isLoading={isLoading}/>
-
       </Route>
-      <Route exact path="/:login/:repo">  <Readme readme={readme}/> </Route>
+      <Route exact path="/:login/:repo">  <Readme repo={repo} login={login} setNotFound={setNotFound}/> </Route>
       <Footer/>
     </>
   );

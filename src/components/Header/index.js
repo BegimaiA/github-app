@@ -3,8 +3,6 @@ import "./header.css"
 import axios from "axios";
 import {Link, useParams} from "react-router-dom";
 
-
-
 const Header = ({setSearch}) => {
   const [user, setUser] = useState({})
   const params = useParams()
@@ -16,9 +14,9 @@ const Header = ({setSearch}) => {
   return (
     <header>
       <nav className="d-flex justify-content-between p-3">
-        <a href={user.html_url} className="text-decoration-none text-white">
+        <Link to={{pathname: user.html_url}} target="_blank" className="text-decoration-none text-white">
           <img src={user.avatar_url} width={80} className="avatar me-3" alt=""/>
-          <span className="fs-4">  {user.login}</span> </a>
+          <span className="fs-4">  {user.login}</span> </Link>
         <div>
           <input onChange={(e)=>setSearch(e.target.value)} type="text" placeholder="Search ..."
                  className="input main-input rounded-3 input-group-sm p-1"/>
@@ -28,7 +26,6 @@ const Header = ({setSearch}) => {
         </div>
       </nav>
     </header>
-  );
-};
+  )};
 
 export default Header;

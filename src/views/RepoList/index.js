@@ -4,7 +4,6 @@ import {Container} from "react-bootstrap";
 import NotFound from "../../components/NotFound";
 import SpinnerComp from "../../components/SpinnerComp";
 
-
 const RepoList = ({repos, search,login, isLoading, notFound}) => {
   const filteredRepos = repos.filter(el => el.name.toLowerCase().includes(search))
   console.log(isLoading)
@@ -13,9 +12,11 @@ const RepoList = ({repos, search,login, isLoading, notFound}) => {
   if(isLoading) {
     return <SpinnerComp/>
   }
+
   if(notFound){
     return <NotFound/>
   }
+
   return (
     <>
       <Container>
@@ -34,7 +35,7 @@ const RepoList = ({repos, search,login, isLoading, notFound}) => {
             filteredRepos.map(item =>
               <tr key={item.id}>
                 <td>  {item.name}</td>
-                <td> Go</td>
+                <td><Link to={{pathname: item.homepage}} target="_blank"> Go</Link></td>
                 <td>   {item.updated_at}</td>
                 <td> <Link to={`/${login}/${item.name}`} className="text-decoration-none">Readme</Link></td>
               </tr>
